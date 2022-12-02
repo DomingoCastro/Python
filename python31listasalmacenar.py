@@ -2,16 +2,14 @@ from python31listastools import *
 pregunta = "s"
 almacen = []
 lista = []
-opcion = 100
 while pregunta == "s":
     print("Escribe un nombre o escriba ok para continuar")
     nombres= input()
+    opcion = 100
     if nombres != "ok":
         lista.append(nombres)
         print("Has almacenado un total de : " + str(len(lista)) + " datos")
     elif nombres == "ok":
-        print("Que deseas hacer con estos nombres?")
-        print("Los nombres almacenados actualmente son: ")
         mostrarNombres(lista)
         menuLista()
         opcion = int(input())
