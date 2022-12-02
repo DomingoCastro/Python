@@ -1,4 +1,4 @@
-from math import trunc
+from math import trunc, pow
 def isbn():
     print("Danos tu ISBN (10 CARACTERES)")
     aux = input()
@@ -69,3 +69,30 @@ def email():
 
             print("EL DOMINIO .COM .ES O SIMILAR NO PUEDE SER INFERIOR A 2 NI SUPERIOR A 4")
     print("FIN PROGRAMA")
+
+def menuBisiestoyNarcicista():
+    print("SELECCIONE UNA OPCION")
+    print("0.- Salir")
+    print("1.- Bisiesto")
+    print("2.- Narcicista")
+    print("3.- Fecha Nacimiento (Bisiestos)")
+
+def isBisiesto(anyo):
+    if (anyo % 4 == 0):
+        if (anyo % 100 != 0 or anyo % 400 == 0):
+            return True
+    else:
+        return False
+
+def isNarcisista(textoNumero):
+    longitud = len(textoNumero)
+    suma = 0
+    for i in range(longitud):
+        caracter = textoNumero[i]
+        numero = int(caracter)
+        potencia = pow(numero, longitud)
+        suma = suma + potencia
+    if (suma == int(textoNumero)):
+        return True
+    else:
+        return False 

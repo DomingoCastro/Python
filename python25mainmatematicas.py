@@ -4,12 +4,12 @@ from python24funcionesmatematicas import *
 resultado = 0
 pregunta = "s"
 while pregunta == "s":
+    abrirMenu()
+    opcion = int(input())
     print("Escribe un numero")
     numero1= int(input())
     print("Escribe otro numero")
     numero2 = int(input())
-    abrirMenu()
-    opcion = int(input())
     if opcion == 1:
         resultado = numero1 + numero2
         print("El resultado de la suma es: " + str(resultado))
@@ -31,3 +31,5 @@ while pregunta == "s":
     if pregunta == "n":
         print("Gracias por usar el programa")
 print ("FIN DE PROGRAMA")
+print ("Pulsa una tecla para cerrar el programa")
+input()
