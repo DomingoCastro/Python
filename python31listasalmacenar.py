@@ -28,17 +28,14 @@ while pregunta == "s":
     elif opcion == 0:
         print("Saliendo...")
         pregunta = "n"
-print ("FIN DE PROGRAMA")
-    # if nombres == nombres["ok"]:
-    #     menuLista()
-    #     opcion = input()
-    # elif nombres != "ok" and opcion == 1:
-    #     nombres.append(nombres)
-    # elif nombres != "ok" and opcion == 2:
-    #     print("Que indice quieres borrar")   
-    #     for i in range(len(nombres)):
-    #         name = nombres[i]
-    #         print(str(i) + ".- " + name)
-    #         indice = int(input())
-    #         nombres.pop(indice)
+try:
+    opcion = "s"
+    print("----------")
+    menuLista()
 
+except IndexError:
+    print("Ha introducido un indice erroneo")
+except ValueError:
+    print("Debe introducir una opcion valida")
+finally:
+    print ("FIN DE PROGRAMA")
