@@ -1,4 +1,4 @@
-from class35mes import Mes
+from class36mes import Mes
 import random
 # Google
 # QUEREMOS LOS NOMBRE DE MES
