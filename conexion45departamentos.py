@@ -35,13 +35,6 @@ class ConexionDepartamentos:
         cursor.commit()
         cursor.close()
         return modificados
-    def ShowDept(self):
-        cursor= self.conexion.cursor()
-        sqlselect= "SELECT * FROM DEPT"
-        cursor.execute(sqlselect)
-        for row in cursor:
-            print(str(row.DEPT_NO) + ", " + row.DNOMBRE + ", " + str(row.LOC))
-        cursor.close()
     def BuscarDepartamento(self, numero):
         cursor= self.conexion.cursor()
         sql = "SELECT * FROM DEPT WHERE DEPT_NO=?"
