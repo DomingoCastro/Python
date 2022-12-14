@@ -1,0 +1,11 @@
+from conexion44enfermos import ConexionEnfermos
+connection= ConexionEnfermos()
+print("Escriba una inscripcion para modificar")
+inscripcion= input()
+print("Escriba el nuevo apellido del enfermo")
+apellido= input()
+respuesta= connection.modificarEnfermo(apellido,inscripcion)
+print("Apellidos modificados: " + str(respuesta))
+# respuesta= connection.elmininarEnfermo(inscripcion)
+# print("Enfermos eliminados: " + str(respuesta))
+print("FIN DE PROGRAMA")
