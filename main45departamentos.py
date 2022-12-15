@@ -1,12 +1,13 @@
 from conexion45departamentos import ConexionDepartamentos
 from class45departamentos import Departamento
 connection= ConexionDepartamentos()
-print("Elige una opcion (1-3), si desea salir escriba 0")
+print("Elige una opcion (1-5), si desea salir escriba 0")
 print("0.- Salir del programa")
 print("1.- Inscribir un nuevo departamento")
 print("2.- Borrar un departamento")
 print("3.- Modificar un departamento")
 print("4.- Buscar departamento")
+print("5.- Mostrar todos los departamentos")
 opcion= int(input())
 if opcion == 1:
     print("Escribe un numero")
@@ -39,6 +40,14 @@ elif opcion == 4:
         print("No existe departamento con ese numero")
     else:
         print("El departamento que has buscado es: " + dept.nombre + ", " + dept.localidad)
+elif opcion == 5:
+    print ("Mostrando todos los departamentos")
+    print ("------------------------------------")
+    print ("NumeroDEPT/NombreDEPT/Localidad")
+    print ("-----------------------------------")
+    departamentos= connection.ShowDept()
+    for dept in departamentos:
+        print(str(dept.numero)+ "/" +dept.nombre + "/" + str(dept.localidad))
 elif opcion == 0:
     print("CERRANDO PROGRAMA...")
 else:

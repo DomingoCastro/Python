@@ -49,3 +49,17 @@ class ConexionDepartamentos:
             dept.nombre = row.DNOMBRE
             dept.localidad = row.LOC
             return dept
+    def ShowDept(self):
+        cursor= self.conexion.cursor()
+        sql = "select * from DEPT"
+        cursor.execute(sql)
+        departamentos= []
+        row = cursor.fetchone()
+        for row in cursor:
+            dept=Departamento()
+            dept.numero= row.DEPT_NO
+            dept.nombre = row.DNOMBRE
+            dept.localidad = row.LOC
+            departamentos.append(dept)
+        cursor.close()
+        return departamentos
